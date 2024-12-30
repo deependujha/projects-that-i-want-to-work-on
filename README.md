@@ -9,7 +9,7 @@
 
 ## BookView
 
-- a simple static-site generator that parses markdown, and generates html. But, html strictly follow like a normal book is. The closest one is `rust mdbook`, but, better.
+- a simple static-site generator that parses markdown, and generates html. But, html strictly outputs `like a typical book`. The closest one is `rust mdbook`, but, better.
 - Recently microsoft released [pdf to markdown python app](https://github.com/microsoft/markitdown). Not played with it much, but we can parse free pdf books and generate beautiful book websites for people to read.
 
 ## Go-fsspec
