@@ -16,3 +16,8 @@
 
 - it's been waiting for too long to be completed, but still not in the priority list.
 - [github link](https://github.com/deependujha/go-fsspec)
+
+## caddy in zig
+
+- zig is a beautiful language if you're crazy enough.
+- building a [caddy](https://caddyserver.com/) like server from scratch in zig will be awesome.
