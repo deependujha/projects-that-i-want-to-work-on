@@ -19,7 +19,7 @@
 
 ## caddy in zig
 
-- zig is a beautiful language if you're crazy enough.
+- zig is a beautiful language if you're drunk enough.
 - building a [caddy](https://caddyserver.com/) like server from scratch in zig will be awesome.
 
 ## nccl function implementation in go
