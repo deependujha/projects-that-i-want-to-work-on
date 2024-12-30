@@ -3,7 +3,7 @@
 > [!WARNING]
 > Why I'm not working on them right now?
 > 
-> Bcoz I'm immediately looking for a job, and don't want to get involved in things that won't help me in getting immediate job.
+> Bcoz I'm immediately looking for a job, and don't want to get involved in things that won't help me in landing a job that I want (compilers and Deep Learning).
 > 
 > But, I neither want to forget them. Hopefully, on some good day, I'll try building any of these.
 
