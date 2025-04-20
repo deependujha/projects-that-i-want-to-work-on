@@ -20,7 +20,7 @@ jobs:
           script: |
             const username = context.payload.comment.user.login;
             const prNumber = context.payload.issue.number;
-            const reply = `hii @${username}`;
+            const reply = `hii @${username}\n![tom_eagerly_waiting_for_result](https://github.com/user-attachments/assets/6a0ea78d-8a97-415a-88dd-de4e9524eb73)`;
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
