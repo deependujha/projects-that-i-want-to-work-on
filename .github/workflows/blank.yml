@@ -11,7 +11,7 @@ permissions:
 jobs:
   reply-to-hello:
     if: |
-      github.event.comment.body == '@hello' && github.event.issue.pull_request && github.event.comment.user.login == 'deependu'
+      github.event.comment.body == '@hello' && github.event.issue.pull_request && github.event.comment.user.login == 'deependujha'
     runs-on: ubuntu-latest
     steps:
       - name: Reply to PR comment and save ID
