@@ -124,8 +124,9 @@ class LitDataBenchmark:
         """Download the result file from the studio."""
         assert self.studio is not None, "Studio is not set up"
         filename = "litdata-benchmark/result.md"
-        print(f"Downloading file: {filename}")
-        self.studio.download_file(filename)
+        output_filename = "result.md"
+        print(f"Downloading file: {filename} to {output_filename}")
+        self.studio.download_file(filename, output_filename)
 
 
 def main():
