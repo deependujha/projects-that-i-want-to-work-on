@@ -39,22 +39,27 @@ jobs:
             });
 
             core.setOutput("comment_id", response.data.id);
+            core.setOutput("prNumber", prNumber);
+            core.setOutput("username", username);
 
-      - name: Wait for 60 seconds
-        run: sleep 60
       - name: run python
         run: |
           pip install -U lightning-sdk
-          python .github/benchmark/benchmark.py --pr 511
+          python .github/benchmark/benchmark.py --pr ${{ steps.comment.outputs.prNumber }}
 
       - name: Update the same comment
         uses: actions/github-script@v7
         env:
           COMMENT_ID: ${{ steps.comment.outputs.comment_id }}
+          USERNAME: ${{ steps.comment.outputs.username }}
         with:
           script: |
+            const fs = require('fs');
+            const path = 'result.md';
+            const reply = fs.readFileSync(path, 'utf8');
+
             const comment_id = Number(process.env.COMMENT_ID);
-            const updated_body = `🧠 processing done!\n\n> You can now check the result above.`;
+            const updated_body = `Hi @${process.env.USERNAME}!\n\n- Benchmarking output:\n\n${reply}`;
 
             await github.rest.issues.updateComment({
               owner: context.repo.owner,
