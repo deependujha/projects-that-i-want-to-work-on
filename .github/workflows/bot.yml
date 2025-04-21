@@ -45,6 +45,8 @@ jobs:
       - name: run python
         run: |
           pip install -U lightning-sdk
+          export LIGHTNING_USER_ID=${{ secrets.LIGHTNING_USER_ID }}
+          export LIGHTNING_API_KEY=${{ secrets.LIGHTNING_USER_ID }}
           python .github/benchmark/benchmark.py --pr ${{ steps.comment.outputs.prNumber }}
 
       - name: Update the same comment
