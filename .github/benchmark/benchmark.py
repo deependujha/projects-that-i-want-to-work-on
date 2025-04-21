@@ -95,7 +95,7 @@ class LitDataBenchmark:
         commands = [
             "git clone https://github.com/Lightning-AI/litData.git",
             "cd litdata",
-            f"gh pr checkout {self.pr}",
+            # f"gh pr checkout {self.pr}",
             "make setup",
         ]
         final_command = " && ".join(commands)
@@ -108,8 +108,9 @@ class LitDataBenchmark:
         """Set up and run the LitData benchmark code and run the benchmarking."""
         assert self.studio is not None, "Studio is not set up"
         commands = [
-            "git clone https://github.com/bhimrazy/litdata-benchmark",
+            "git clone https://github.com/deependujha/litdata-benchmark.git",
             "cd litdata-benchmark",
+            "git checkout feat/basic-setup"
             "make benchmark",
         ]
         final_command = " && ".join(commands)
@@ -117,10 +118,6 @@ class LitDataBenchmark:
         output, output_code = self.studio.run_with_exit_code(final_command)
         if output_code != 0:
             raise RuntimeError(f"Benchmark failed:\n{final_command}\nExit code {output_code}:\n{output}")
-
-        # Assuming this was debug text, consider removing or logging
-        # Downloading extra result
-        self.studio.download_file("fucking_work_harder_much_much_harder.txt")
 
     def download_result_file(self) -> None:
         """Download the result file from the studio."""
@@ -136,9 +133,9 @@ def main():
     """Main function to run the benchmark."""
     config = parse_args()
     print(f"Running LitData benchmark for PR #{config}")
-    # benchmark = LitDataBenchmark(config)
-    # benchmark.run()
-    # print(f"✅ Benchmark completed for PR #{config.pr_number}")
+    benchmark = LitDataBenchmark(config)
+    benchmark.run()
+    print(f"✅ Benchmark completed for PR #{config.pr_number}")
 
 
 if __name__ == "__main__":
