@@ -11,7 +11,7 @@ permissions:
 jobs:
   reply-to-hello:
     if: |
-      github.event.comment.body == '@hello' && github.event.issue.pull_request && github.event.comment.user.login == 'deependujha'
+      github.event.comment.body == '@benchmark' && github.event.issue.pull_request && github.event.comment.user.login == 'deependujha'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
