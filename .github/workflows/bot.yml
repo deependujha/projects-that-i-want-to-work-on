@@ -62,7 +62,7 @@ jobs:
             const reply = fs.readFileSync(path, 'utf8');
 
             const comment_id = Number(process.env.COMMENT_ID);
-            const updated_body = `Hi @${process.env.USERNAME}!\n\n- Benchmarking output:\n\n${reply}`;
+            const updated_body = `Hi @${process.env.USERNAME}!\n\n- Benchmarking output:\n\n${reply}\n\n\ncc: @deependujha`;
 
             await github.rest.issues.updateComment({
               owner: context.repo.owner,
