@@ -43,7 +43,9 @@ jobs:
       - name: Wait for 60 seconds
         run: sleep 60
       - name: run python
-        run: python .github/benchmark/benchmark.py --pr 511
+        run: |
+          pip install -U lightning-sdk
+          python .github/benchmark/benchmark.py --pr 511
 
       - name: Update the same comment
         uses: actions/github-script@v7
