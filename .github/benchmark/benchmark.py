@@ -94,7 +94,7 @@ class LitDataBenchmark:
         assert self.studio is not None, "Studio is not set up"
         commands = [
             "git clone https://github.com/Lightning-AI/litData.git",
-            "cd litdata",
+            "cd litData",
             # f"gh pr checkout {self.pr}",
             "make setup",
         ]
