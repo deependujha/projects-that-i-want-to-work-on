@@ -93,6 +93,7 @@ class LitDataBenchmark:
         """Set up the LitData PR in the studio."""
         assert self.studio is not None, "Studio is not set up"
         commands = [
+            "rm -rf lit* -y",
             "git clone https://github.com/Lightning-AI/litData.git",
             "cd litData",
             # f"gh pr checkout {self.pr}",
@@ -124,9 +125,7 @@ class LitDataBenchmark:
         assert self.studio is not None, "Studio is not set up"
         filename = "result.md"
         print(f"Downloading file: {filename}")
-        output, output_code = self.studio.download_file(filename)
-        if output_code != 0:
-            raise RuntimeError(f"Download failed for {filename}.\nExit code {output_code}:\n{output}")
+        self.studio.download_file(filename)
 
 
 def main():
