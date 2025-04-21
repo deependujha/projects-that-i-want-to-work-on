@@ -110,7 +110,7 @@ class LitDataBenchmark:
         commands = [
             "git clone https://github.com/deependujha/litdata-benchmark.git",
             "cd litdata-benchmark",
-            "git checkout feat/basic-setup"
+            "git checkout feat/basic-setup",
             "make benchmark",
         ]
         final_command = " && ".join(commands)
