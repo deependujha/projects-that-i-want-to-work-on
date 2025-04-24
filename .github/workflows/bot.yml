@@ -9,9 +9,18 @@ permissions:
   pull-requests: write
 
 jobs:
-  reply-to-hello:
+  reply-to-benchmark:
     if: |
-      github.event.comment.body == '@benchmark' && github.event.issue.pull_request && github.event.comment.user.login == 'deependujha'
+      github.event.comment.body == '@benchmark' &&
+      github.event.issue.pull_request &&
+      (
+        github.event.comment.user.login == 'tchaton' ||
+        github.event.comment.user.login == 'lantiga' ||
+        github.event.comment.user.login == 'justusschock' ||
+        github.event.comment.user.login == 'Borda' ||
+        github.event.comment.user.login == 'bhimrazy' ||
+        github.event.comment.user.login == 'deependujha'
+      )
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,7 +54,7 @@ jobs:
       - name: run python
         run: |
           pip install -U lightning-sdk
-          python .github/benchmark/benchmark.py --pr ${{ steps.comment.outputs.prNumber }}
+          python .github/benchmark/benchmark.py --pr 565
         env: # the following values are parsed from the repository secrets
           LIGHTNING_USER_ID: ${{ secrets.LIGHTNING_USER_ID }}
           LIGHTNING_API_KEY: ${{ secrets.LIGHTNING_API_KEY }}
