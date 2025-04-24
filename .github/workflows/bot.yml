@@ -36,6 +36,14 @@ jobs:
             const prNumber = context.payload.issue.number;
 
             console.log(context.payload);
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.issue.number,
+            });
+            const branch = pr.data.head.ref;
+            console.log(branch);
+            core.setOutput("branch", branch);
 
             // Replace placeholders
             const reply = replyTemplate
