@@ -47,7 +47,7 @@ def parse_args() -> BenchmarkArgs:
 
     return BenchmarkArgs(
         pr_number=args.pr,
-        pr_name=args.branch
+        pr_name=args.branch,
         user=args.user,
         org=args.org,
         teamspace=args.teamspace,
