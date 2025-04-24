@@ -93,7 +93,7 @@ class LitDataBenchmark:
         """Set up the LitData PR in the studio."""
         assert self.studio is not None, "Studio is not set up"
         commands = [
-            "rm -rf lit*",
+            "rm -rf lit*(N)",
             "git clone https://github.com/Lightning-AI/litData.git",
             "cd litData",
             f"gh pr checkout {self.pr}",
