@@ -100,8 +100,8 @@ class LitDataBenchmark:
             "rm -rf lit*(N)",
             "git clone https://github.com/Lightning-AI/litData.git",
             "cd litData",
-            f"git fetch origin pull/{self.pr}/head:${self.pr_name}",
-            f"git checkout ${self.pr_name}",
+            f"git fetch origin pull/{self.pr}/head:{self.pr_name}",
+            f"git checkout {self.pr_name}",
             "make setup",
         ]
         final_command = " && ".join(commands)
