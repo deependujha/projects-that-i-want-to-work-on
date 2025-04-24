@@ -96,7 +96,7 @@ class LitDataBenchmark:
             "rm -rf lit*",
             "git clone https://github.com/Lightning-AI/litData.git",
             "cd litData",
-            # f"gh pr checkout {self.pr}",
+            f"gh pr checkout {self.pr}",
             "make setup",
         ]
         final_command = " && ".join(commands)
@@ -109,9 +109,9 @@ class LitDataBenchmark:
         """Set up and run the LitData benchmark code and run the benchmarking."""
         assert self.studio is not None, "Studio is not set up"
         commands = [
-            "git clone https://github.com/deependujha/litdata-benchmark.git",
+            "git clone https://github.com/bhimrazy/litdata-benchmark.git",
             "cd litdata-benchmark",
-            "git checkout feat/basic-setup",
+            # "git checkout feat/basic-setup",
             "make benchmark",
         ]
         final_command = " && ".join(commands)
